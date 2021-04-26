@@ -25,7 +25,8 @@ export default class Money {
         }
       };
       request.open("GET",URL, true);
-      request.send();
+      request.send(); 
+      console.log("crap");
     });
   }
 }
