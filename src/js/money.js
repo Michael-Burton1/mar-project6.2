@@ -7,16 +7,17 @@ export default class Money {
     this.EurRate =EurRate;
     this.AllRate= AllRate; 
   }
-  // moneyConversion(){
-  //   let convertedAmount = this.userAmount * chosenRate;
-  //   return convertedAmount;
-  // }
+  moneyConversion(chosenRate){
+    let convertedAmount = this.userAmount * chosenRate;
+    return convertedAmount;
+  }
+
   static getRates() {
     return new Promise(function(resolve,reject){
       const apiKey = process.env.API_KEY;
       console.log("aaaaaaaaaa" + apiKey); 
       let request= new XMLHttpRequest();
-      const URL =`https://v6.exchangerate-api.com/v6/${apikey}/latest/USD`;
+      const URL =`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
       request.onload = function () {
         if (this.status === 200) {
           resolve (request.response);          
