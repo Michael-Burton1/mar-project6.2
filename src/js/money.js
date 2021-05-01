@@ -15,7 +15,6 @@ export default class Money {
   static getRates() {
     return new Promise(function(resolve,reject){
       const apiKey = process.env.API_KEY;
-      console.log("aaaaaaaaaa" + apiKey); 
       let request= new XMLHttpRequest();
       const URL =`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
       request.onload = function () {
@@ -27,7 +26,6 @@ export default class Money {
       };
       request.open("GET",URL, true);
       request.send(); 
-      console.log("crap");
     });
   }
 }
